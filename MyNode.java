@@ -24,6 +24,7 @@ public class MyNode<k> implements INode<k>{
 		// TODO Auto-generated method stub
 		this.key = key;
 		
+		
 	}
 
 	@Override
