@@ -4,8 +4,8 @@ package javapractice;
 /**
  * MyLinkedListTest class contains main function 
  * create 3 nodes
- * checks if first node is connected to second and second is connected to third node
- * if so it outputs linked list created statement
+ * it outputs linked list created or not statement
+ * prints the nodes
  * @author Mohammad Musthafa
  */
 public class MyLinkedListTest {
@@ -16,11 +16,11 @@ public class MyLinkedListTest {
 
 		MyLinkedList<Integer> myLinkedList = new MyLinkedList<Integer>();
 		myLinkedList.add(myFirstNode);
-		myLinkedList.add(mySecondNode);
-		myLinkedList.add(myThirdNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
 
-		boolean result = myLinkedList.head.equals(myThirdNode) && myLinkedList.head.getNext().equals(mySecondNode)
-				&& myLinkedList.tail.equals(myFirstNode);
+		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode)
+				&& myLinkedList.tail.equals(myThirdNode);
 
 		if (result) {
 			System.out.println("Linked list is created!");

@@ -29,6 +29,24 @@ public class MyLinkedList<k> {
 		}
 	}
 	
+	/**
+	 * @method appends an element to the linked list
+	 * @param newNode contains new node value
+	 */
+	public void append(INode<k> newNode) {
+		if(this.head == null) {
+			this.head = newNode;
+		}
+		if(this.tail == null) {
+			this.tail = newNode;
+		}
+		else {
+			this.tail.setNext(newNode);
+			this.tail = newNode;
+
+		}
+	}
+	
 	
 	//@method to print the nodes of linked list
 	public void printNodes() {
