@@ -118,12 +118,31 @@ public class MyLinkedListTest {
 		myLinkedList.printNodes();
 	}
 	
+	/**@method to delete he last node
+	 * @return nothing
+	 */
+	public static void deleteLast()
+	{
+		MyNode<Integer> myFirstNode = new MyNode<>(70);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(56);
+		
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<Integer>();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.add(mySecondNode);
+		myLinkedList.add(myThirdNode);
+		INode<Integer> temp =myLinkedList.popLast();
+		System.out.println(temp.getKey()+" has been deleted");
+		myLinkedList.printNodes();
+	}
+	
 	public static void main(String [] args) {
 		//createLinkedlist();
 		//addNewNode();
 		//appendNode();
 		//insertBetween();
-		deleteFirst();
+		//deleteFirst();
+		deleteLast();
 	}
 
 }

@@ -68,6 +68,20 @@ public class MyLinkedList<k> {
 		return tempNode;
 	}
 	
+	/**
+	 * @method used to delete last element from the linked list
+	 * @return the delete node
+	 */
+	public INode<k> popLast() {
+		INode<k> curNode = head;
+		INode<k> prevNode = null;
+		while(curNode != null && curNode.getNext() != null) {
+			prevNode = curNode;
+			curNode = curNode.getNext();
+		}
+		prevNode.setNext(null);
+		return curNode;
+	}
 	
 	//@method to print the nodes of linked list
 	public void printNodes() {
