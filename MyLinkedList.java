@@ -47,6 +47,18 @@ public class MyLinkedList<k> {
 		}
 	}
 	
+	/**
+	 * @method inserts an node after the required node
+	 * @param myNode contains node where new node is added front of it
+	 * @param newNode contains new node value
+	 * @return nothing
+	 */
+	public void insert(INode<k> myNode,INode<k> newNode) {
+		INode<k> tempNode = myNode.getNext();
+		myNode.setNext(newNode);
+		newNode.setNext(tempNode);
+	}
+	
 	
 	//@method to print the nodes of linked list
 	public void printNodes() {
