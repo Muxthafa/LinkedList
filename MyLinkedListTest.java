@@ -100,11 +100,30 @@ public class MyLinkedListTest {
 		}
 	}
 	
+	/**@method to delete the first node
+	 * @return nothing
+	 */
+	public static void deleteFirst()
+	{
+		MyNode<Integer> myFirstNode = new MyNode<>(70);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(56);
+		
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<Integer>();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.add(mySecondNode);
+		myLinkedList.add(myThirdNode);
+		INode<Integer> temp =myLinkedList.pop();
+		System.out.println("Element "+temp.getKey()+" deleted");
+		myLinkedList.printNodes();
+	}
+	
 	public static void main(String [] args) {
 		//createLinkedlist();
 		//addNewNode();
 		//appendNode();
-		insertBetween();
+		//insertBetween();
+		deleteFirst();
 	}
 
 }

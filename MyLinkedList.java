@@ -59,6 +59,15 @@ public class MyLinkedList<k> {
 		newNode.setNext(tempNode);
 	}
 	
+	/**@method to delete the first element from the linked list
+	 * @return head pointing at second element
+	 */
+	public INode<k> pop(){
+		INode<k> tempNode = this.head;			//store current head value in a temperory node
+		this.head = head.getNext();
+		return tempNode;
+	}
+	
 	
 	//@method to print the nodes of linked list
 	public void printNodes() {
