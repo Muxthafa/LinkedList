@@ -185,6 +185,26 @@ public class MyLinkedListTest {
 		myLinkedList.printNodes();
 	}
 	
+	/*@method deletes elements at the specified location
+	 *@return nothing
+	 */
+	public static void deleteSpecificElement() {
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(40);
+		MyNode<Integer> myFourthNode = new MyNode<>(70);
+
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<Integer>();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		myLinkedList.append(myFourthNode);
+
+		INode<Integer> head = myLinkedList.deleteSpecific(40);
+		int count = myLinkedList.countElements(head);
+		System.out.println("Size of linked list is "+count);
+		myLinkedList.printNodes();
+	}
 	public static void main(String [] args) {
 		//createLinkedlist();
 		//addNewNode();
@@ -193,7 +213,8 @@ public class MyLinkedListTest {
 		//deleteFirst();
 		//deleteLast();
 		//searchElement();
-		insertSpecific();
+		//insertAt();
+		deleteSpecificElement();
 	}
 
 }

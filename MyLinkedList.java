@@ -98,6 +98,42 @@ public class MyLinkedList<k> {
 		return null;
 	}
 	
+	public INode<k> deleteSpecific(k Key) {
+		if(head == null || head.getNext() == null) {
+			return null;
+		}
+		INode<k> cur = this.head;
+		INode<k> prev = null;
+		
+		while(cur != null && cur.getKey() != Key) {
+			prev = cur;
+			cur = cur.getNext();
+		}
+		
+		if(cur == null) {
+			System.out.println("Not found");
+			return head;
+		}
+	    System.out.println("Element "+cur.getKey()+" is deleted");
+		prev.setNext(cur.getNext());
+		return head;
+	}
+	
+	public int countElements(INode<k> head) {
+		INode<k> tempNode = head;
+		if(tempNode == null)
+			return 0;
+		if(tempNode.getNext() == null)
+			return 1;
+		int count = 1;
+		while(tempNode != null && tempNode.getNext() != null) {
+			tempNode = tempNode.getNext();
+			count++;
+		}
+		return count;
+	
+	}
+	
 	//@method to print the nodes of linked list
 	public void printNodes() {
 		System.out.println("My Nodes: "+head);
