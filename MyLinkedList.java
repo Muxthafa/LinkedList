@@ -83,6 +83,10 @@ public class MyLinkedList<k> {
 		return curNode;
 	}
 	
+	/**
+	 * @method used to search element in the linked list
+	 * @return null
+	 */
 	public INode<k> search(k Key) {
 		INode<k> tempNode = head;
 		while(tempNode != null) {

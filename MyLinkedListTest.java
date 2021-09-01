@@ -140,6 +140,9 @@ public class MyLinkedListTest {
 		myLinkedList.printNodes();
 	}
 	
+	/**@method to search element 
+	 * @return nothing
+	 */
 	public static void searchElement() {
 		MyNode<Integer> myFirstNode = new MyNode<>(70);
 		MyNode<Integer> mySecondNode = new MyNode<>(30);
@@ -157,6 +160,31 @@ public class MyLinkedListTest {
 		myLinkedList.printNodes();
 	}
 	
+	/**@method which adds elements at the specified location
+	 * @return nothing
+	 */
+	public static void insertAt() {
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(70);
+		MyNode<Integer> myFourthNode = new MyNode<>(40);
+		
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<Integer>();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		INode<Integer> temp = myLinkedList.search(30);
+		if(temp != null) {
+			INode<Integer> next = temp.getNext();
+			temp.setNext(myFourthNode);
+			myFourthNode.setNext(next);
+		}else {
+			System.out.println("Element not found");
+		}
+		System.out.println("Element added!");
+		myLinkedList.printNodes();
+	}
+	
 	public static void main(String [] args) {
 		//createLinkedlist();
 		//addNewNode();
@@ -164,7 +192,8 @@ public class MyLinkedListTest {
 		//insertBetween();
 		//deleteFirst();
 		//deleteLast();
-		searchElement();
+		//searchElement();
+		insertSpecific();
 	}
 
 }
