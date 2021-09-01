@@ -83,6 +83,17 @@ public class MyLinkedList<k> {
 		return curNode;
 	}
 	
+	public INode<k> search(k Key) {
+		INode<k> tempNode = head;
+		while(tempNode != null) {
+			if (tempNode.getKey().equals(Key)){
+				return tempNode;
+			}
+			tempNode = tempNode.getNext();
+		}
+		return null;
+	}
+	
 	//@method to print the nodes of linked list
 	public void printNodes() {
 		System.out.println("My Nodes: "+head);

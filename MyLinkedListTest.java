@@ -15,9 +15,9 @@ public class MyLinkedListTest {
 	 */
 	public static void createLinkedlist()
 	{
-		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> myFirstNode = new MyNode<>(70);
 		MyNode<Integer> mySecondNode = new MyNode<>(30);
-		MyNode<Integer> myThirdNode = new MyNode<>(70);
+		MyNode<Integer> myThirdNode = new MyNode<>(56);
 		
 		myFirstNode.setNext(mySecondNode);
 		mySecondNode.setNext(myThirdNode);
@@ -29,6 +29,10 @@ public class MyLinkedListTest {
 		}else {
 			System.out.println("Linked list is not created!");
 		}
+	}
+	
+	public static void createNodes() {
+		
 	}
 	
 	/**
@@ -136,13 +140,31 @@ public class MyLinkedListTest {
 		myLinkedList.printNodes();
 	}
 	
+	public static void searchElement() {
+		MyNode<Integer> myFirstNode = new MyNode<>(70);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(56);
+	
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<Integer>();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.add(mySecondNode);
+		myLinkedList.add(myThirdNode);
+		INode<Integer> result = myLinkedList.search(30);
+		if(result == null)
+			System.out.println("Element not found");
+		else
+			System.out.println("Element "+result.getKey()+" is found!");
+		myLinkedList.printNodes();
+	}
+	
 	public static void main(String [] args) {
 		//createLinkedlist();
 		//addNewNode();
 		//appendNode();
 		//insertBetween();
 		//deleteFirst();
-		deleteLast();
+		//deleteLast();
+		searchElement();
 	}
 
 }
