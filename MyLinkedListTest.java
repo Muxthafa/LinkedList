@@ -205,6 +205,23 @@ public class MyLinkedListTest {
 		System.out.println("Size of linked list is "+count);
 		myLinkedList.printNodes();
 	}
+	
+	public static void orderedLinkedList() {
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(40);
+		MyNode<Integer> myFourthNode = new MyNode<>(70);
+
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<Integer>();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		myLinkedList.append(myFourthNode);
+		
+		myLinkedList.sortLinkedList();
+		System.out.println("Elements after sorting:");
+		myLinkedList.printNodes();
+	}
 	public static void main(String [] args) {
 		//createLinkedlist();
 		//addNewNode();
@@ -214,7 +231,8 @@ public class MyLinkedListTest {
 		//deleteLast();
 		//searchElement();
 		//insertAt();
-		deleteSpecificElement();
+		//deleteSpecificElement();
+		orderedLinkedList();
 	}
 
 }

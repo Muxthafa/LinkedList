@@ -119,6 +119,10 @@ public class MyLinkedList<k> {
 		return head;
 	}
 	
+	/*@method countElements counts number of elements in linked list
+	 * @param head contains the node value
+	 * @return count of elements
+	 */
 	public int countElements(INode<k> head) {
 		INode<k> tempNode = head;
 		if(tempNode == null)
@@ -126,12 +130,38 @@ public class MyLinkedList<k> {
 		if(tempNode.getNext() == null)
 			return 1;
 		int count = 1;
-		while(tempNode != null && tempNode.getNext() != null) {
+		while(tempNode != null) {
 			tempNode = tempNode.getNext();
 			count++;
 		}
 		return count;
 	
+	}
+	
+	/*@method to sort the elements
+	 * used bubble sort approach
+	 * @return nothing
+	 */
+	public void sortLinkedList() {
+		INode<k> current = this.head;
+		INode<k> next = null;
+		if (this.head == null) {
+			System.out.println("List is empty");
+		} else {
+			while (current != null) {
+				next = current.getNext();			//'next' will point to next node
+				k temp;
+				while (next != null) {
+					if ((int) current.getKey() > (int) next.getKey()) {			//swap the data if current data is greater than next node's data 
+						temp = current.getKey();
+						current.setKey(next.getKey());
+						next.setKey(temp);
+					}
+					next = next.getNext();
+				}
+				current = current.getNext();
+			}
+		}
 	}
 	
 	//@method to print the nodes of linked list
